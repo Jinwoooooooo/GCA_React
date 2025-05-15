@@ -19,7 +19,7 @@ function countReducer(state, action) {
 // 상태 선언
 const initUserState = { name: "", age: 0 };
 
-// 리듀서 정의 - 상태 변경 함수
+// 리듀서 정의
 function userReducer(state, action) {
     return { ...state, [action.name]: action.value };
 }
@@ -32,18 +32,30 @@ export const UseReducerComponent = () => {
     );
     const [userState, userDispatch] = useReducer(userReducer, initUserState);
 
+    // 전개연산자
+    const user = {
+        name: "홍길동",
+        age: 21,
+    };
+
+    const updateUser = {
+        ...user,
+        age: 31,
+    };
+
+    console.log(updateUser);
+
     return (
         <div className="UseReducerComponent">
             <h4>UseReducerComponent</h4>
-
             <p>count : {countState.count}</p>
 
             {/* prettier-ignore */}
             <>
-            <button onClick={() => {countDispatch({type: "INCREASE"})}}>증가</button>
-            <button onClick={() => {countDispatch({type: "DECREASE"})}}>감소</button>
-            <button onClick={() => {countDispatch({type: "RESET"})}}>리셋</button>
-            </>
+      <button onClick={() => {countDispatch({ type: "INCREASE" });}}>증가</button>
+      <button onClick={() => {countDispatch({ type: "DECREASE" });}}>감소</button>
+      <button onClick={() => {countDispatch({ type: "RESET" });}}>리셋</button>
+      </>
 
             <p>
                 name : {userState.name}
@@ -54,9 +66,9 @@ export const UseReducerComponent = () => {
 
             {/* prettier-ignore */}
             <>
-                <input type="text" name="name" value={userState.name} onChange={(e) => {userDispatch(e.target)}}/>
-                <input type="text" name="age" value={userState.age} onChange={(e) => {userDispatch(e.target)}}/>
-            </>
+        <input type="text" name="name" value={userState.name} onChange={(e)=>{userDispatch(e.target)}}/>
+        <input type="text" name="age" value={userState.age} onChange={(e)=>{userDispatch(e.target)}}/>
+      </>
         </div>
     );
 };

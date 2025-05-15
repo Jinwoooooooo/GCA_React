@@ -5,11 +5,7 @@ export const UseStateComponent = () => {
     // state 선언 : state는 컴포넌트 내부에서 사용되는 값
     const [count, setCount] = useState(0);
     const [message, setMessage] = useState("");
-    const [user, setUser] = useState({
-        uid: "",
-        name: "",
-        age: 0,
-    });
+    const [user, setUser] = useState({ uid: "", name: "", age: 0 });
     const [users, setUsers] = useState([]);
 
     // 핸들러
@@ -17,14 +13,16 @@ export const UseStateComponent = () => {
         setMessage(e.target.value);
     };
 
-    // 전개 연산자 실습
+    // 전개연산자 실습
     const arr1 = [1, 2, 3];
     const arr2 = [...arr1, 4, 5];
+
     console.log(arr2);
 
     return (
         <div className="UseStateComponent">
             <h4>UseStateComponent</h4>
+
             <p>상태값 count : {count}</p>
             <button
                 onClick={() => {
@@ -54,7 +52,6 @@ export const UseStateComponent = () => {
             </p>
             <input
                 type="text"
-                placeholder="아이디 입력"
                 value={user.uid}
                 onChange={(e) => {
                     setUser({ ...user, uid: e.target.value });
@@ -63,7 +60,6 @@ export const UseStateComponent = () => {
             <br />
             <input
                 type="text"
-                placeholder="이름 입력"
                 value={user.name}
                 onChange={(e) => {
                     setUser({ ...user, name: e.target.value });
@@ -72,12 +68,12 @@ export const UseStateComponent = () => {
             <br />
             <input
                 type="text"
-                placeholder="나이 입력"
                 value={user.age}
                 onChange={(e) => {
                     setUser({ ...user, age: e.target.value });
                 }}
             />
+            <br />
         </div>
     );
 };

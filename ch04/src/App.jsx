@@ -1,18 +1,24 @@
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
 import "./App.css";
-import { UseReducerComponent } from "./components/UseReducerComponent";
 import { UseRefComponent } from "./components/UseRefComponent";
 import { UseStateComponent } from "./components/UseStateComponent";
+import { UseReducerComponent } from "./components/UseReducerComponent";
+import { UseEffectComponent } from "./components/UseEffectComponent";
+import { UseMemoComponent } from "./components/UseMemoComponent";
+import { UseCallbackComponent } from "./components/UseCallbackComponent";
+import { UseCustomComponent } from "./components/UseCustomComponent";
 
 /*
   날짜 : 2025/05/13
   이름 : 정진우
-  내용 : 4장 리액트 훅 
+  내용 : 4장 리액트 훅
 */
-
 function App() {
     return (
         <>
-            <h4>4장 리액트 훅</h4>
+            <h3>4장 리액트 훅</h3>
 
             {/* useRef hook */}
             <UseRefComponent />
@@ -25,12 +31,16 @@ function App() {
             <UseReducerComponent />
 
             {/* useEffect hook */}
+            <UseEffectComponent />
 
             {/* useMemo hook */}
+            <UseMemoComponent />
 
             {/* useCallback hook */}
+            <UseCallbackComponent />
 
             {/* useCustom hook */}
+            <UseCustomComponent />
         </>
     );
 }

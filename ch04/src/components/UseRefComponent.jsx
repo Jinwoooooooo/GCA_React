@@ -22,21 +22,11 @@ export const UseRefComponent = () => {
         <div className="UseRefComponent">
             <h4>UseRefComponent</h4>
             <p>
-                <input
-                    type="text"
-                    name="uid"
-                    ref={refUid}
-                    placeholder="아이디 입력"
-                />
+                <input type="text" name="uid" ref={refUid} />
                 <button onClick={btn1Handler}>확인</button>
             </p>
             <p>
-                <input
-                    type="text"
-                    name="name"
-                    ref={refName}
-                    placeholder="이름 입력"
-                />
+                <input type="text" name="name" ref={refName} />
                 <button onClick={btn2Handler}>확인</button>
             </p>
         </div>
